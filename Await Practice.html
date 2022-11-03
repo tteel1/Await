@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function getRandomNumber() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve(Math.floor(Math.random() * 101)), 5000)
+            });
+
+            return promise;
+
+        }
+
+        async function invoke() {
+            getRandomNumber();
+
+            let reslut = await getRandomNumber();
+
+            console.log(reslut);
+        }
+
+
+
+
+        invoke();
+
+
+
+        async function findLongLatt(Cityname) {
+            let response = await fetch('https://geocode.xyz/' + Cityname + '?json=1');
+            let cityInfo = await response.json();
+            let latt = await cityInfo.latt;
+            let long = await cityInfo.longt;
+
+            console.log(latt, long);
+        }
+
+
+        setTimeout(function () {
+            findLongLatt("New York");;
+        }, 5000);
+
+        
+        setTimeout(function () {
+            findLongLatt("Houston");;
+        }, 5000);
+    </script>
+</body>
+
+</html>
