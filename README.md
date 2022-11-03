@@ -1,5 +1,5 @@
-##Submit: Async/Await Practice
-#Requirements
+Submit: Async/Await Practice
+Requirements
 Write an asynchronous function and call it with async/await
 Write function called getRandomNumber that returns a promise
 In the promise, write a setTimeout() that will resolve the promise with a random number after .5 seconds
